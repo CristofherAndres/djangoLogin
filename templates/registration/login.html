@@ -1,52 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
+<!-- Static para img, css, js, etc -->
+{% load static%}
+
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Login</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static "vendor/fontawesome-free/css/all.min.css" %}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static "css/sb-admin-2.min.css"%}" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="bg-gradient-primary">
 
-    <div class="container my-5">
-        <main class="form-signin w-50 m-auto">
-            <form method="post">
-                {% csrf_token %}
-                <h1 class="h3 mb-3 fw-normal">Login</h1>
+    <div class="container">
 
-                {{ form.non_field_errors }}
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
 
+            <div class="col-xl-10 col-lg-12 col-md-9">
 
-                {{ form.username.errors }}
-                <div class="form-floating">
-                    <input type="text" class="form-control" placeholder="name@example.com" id="id_username" name="username" required>
-                    <label for="floatingInput">Nombre de usuario</label>
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    </div>
+                                    <form class="user" method="post">
+                                        {% csrf_token %}
+                                        {{ form.non_field_errors }}
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" id="id_username" name="username" placeholder="Nombre de usuario...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" id="id_password" name="password" placeholder="Contraseña">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary btn-user btn-block" type="submit">
+                                            Iniciar Sesión
+                                        </button>
+                                        <hr>
+                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                        </a>
+                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                                        </a>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="register.html">Create an Account!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {{ form.password.errors }}
-                <div class="form-floating">
-                    <input type="password" class="form-control" placeholder="Password" id="id_password" name="password" required>
-                    <label for="floatingPassword">Contraseña</label>
-                </div>
-                <div class="form-check text-start my-3">
-                    <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Recordarme
-                    </label>
-                </div>
-                <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
-                <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
-                
-            </form>
-        </main>
+
+            </div>
+
+        </div>
+
     </div>
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static "vendor/jquery/jquery.min.js"%}"></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{% static "vendor/jquery-easing/jquery.easing.min.js"%}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static "js/sb-admin-2.min.js"%}"></script>
+
 </body>
 
 </html>

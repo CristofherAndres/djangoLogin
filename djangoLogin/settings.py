@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'moduloPersonas'
 ]
 
 MIDDLEWARE = [
@@ -131,9 +132,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 """ Página luego del login """
-LOGIN_REDIRECT_URL = "/panelAdmin"
+LOGIN_REDIRECT_URL = "/dashboard"
 """ Página luego del logout """
-LOGOUT_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/cuentas/login/"
 """ Página de login """
 LOGIN_URL = "/cuentas/login/"
 """ Página de logout """

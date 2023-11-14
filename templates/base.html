@@ -28,7 +28,14 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        {% include "menus/sidebar.html" %}
+        <!-- Ver si el usuario es admin o no -->
+        {% if user.is_superuser %}
+            {% include "menus/sidebarAdmin.html" %}
+        {% else %}
+            {% include "menus/sidebarUser.html" %}
+        {% endif %}
+
+
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

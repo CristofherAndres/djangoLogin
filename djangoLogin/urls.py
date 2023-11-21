@@ -26,5 +26,6 @@ from moduloPersonas.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cuentas/', include("django.contrib.auth.urls")),
-    path("dashboard/", personasIndex , name="dashboard"),     
+    path("dashboard/", personasIndex , name="dashboard"),
+    path("signUp/", signUp , name="signUp"),     
 ]
